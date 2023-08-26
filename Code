@@ -1,0 +1,26 @@
+def categorize_message(message):
+    chitchat_phrases = ["hi", "hello", "oh awesome", "gotcha"]
+    
+    words = message.lower().split()
+    
+    for word in words:
+        if word in chitchat_phrases:
+            return "It's chitchat"
+    
+    return "It's not chitchat"
+
+def main():
+    print("Welcome to the Chitchat Categorization App!")
+    
+    while True:
+        user_input = input("\nEnter a message (or type 'exit' to quit): ")
+        
+        if user_input.lower() == 'exit':
+            print("Exiting the app. Goodbye!")
+            break
+        
+        category = categorize_message(user_input)
+        print(f"Category: {category}\n")
+
+if __name__ == "__main__":
+    main()
